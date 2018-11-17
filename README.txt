@@ -60,3 +60,55 @@ This should be a complete list of current general incompatibilities. Everything 
   * using underscores to make text bold. Double underline is already used by DokuWiki for underlining text (Markdown can't do that), and I think it's better to have the option for underlining. In general notation, you also rather use underscores for underlining than making text bold.
   * conflict with [[https://www.dokuwiki.org/template:bootstrap3|bootstraps3 theme]] in bulleted lists
 
+===== Development =====
+
+=== Change Log ===
+
+**Please note that this plugin is not actively developed anymore!**
+
+You can find the whole release history on [[https://www.tolledomain.ch/dokuwiki/doku.php?id=projects:markdowku|the plugin website]].
+
+**Last update: 2017-02-19**: Relese a new version. Compatibility with PHP 7.0 is now inside. I am sorry for the long delay with that. I had the code around, but testing was a bit difficult with PHP 7.0. However, it is released now.
+
+=== Bugs/Issues ===
+
+There is a [[https://vcs.in-berlin.de/schrank21_dokuwiki/reportlist|bug tracker]] online. Please note you have to log in anonymous (go to Login page, click "Fill out captcha") before you can commit bugs. Also, you can write me an e-mail and I will enter the bug to the bug tracker.
+
+=== ToDo/Wish List ===
+
+This plugin is not complete yet. Incompatibilities are listed above at [[#Known incompatibilities]].
+
+In the end, I want to extend this plugin to be able to handle different markdown flavours (esp. Github), with a switch in the configuration to choose between those all.
+
+A switch like <no_markdown> will allow to avoid problems with existing native markup pages. (jseto) -- I'll see what is possible, but I think it will be difficult to implement that. (gnrp 13-09-23)
+
+The plugin editor does not work together with markdown. Either have the possibility to disable it, or even better, make it work with Markdown (Celano 13-08-08, reformatted by gnrp 13-09-23)
+
+The plugin seem useful as we write in markdown but eventually need to use some DokuWiki syntax. I have to say that the wiki display markdown files created elsewhere by peoples using markdown editor and they doesn’t want to change to a new syntax. The idea is they work as they used to in markdown tools, and eventually had some DokuWiki synthax for some site related features and needs. I have three problems that prevent us to use the plugin which I hope could be improved. 
+
+  * Html doesn’t work but html is correct markdown and really useful for things markdown can’t do. Even the %%<html></html>%% tags of DokuWiki doesn’t work either. I have allowed html in config options but the plugin just seems to ruin the page when it enconter any %%<tag>%%. FIXME
+  * Second problem is that we use a lot the footnote syntax of markdown extra (a footnote syntax %%[^1]%% which become near a standard in markdown tools) [[https://michelf.ca/projects/php-markdown/extra/#footnotes|https://michelf.ca/projects/php-markdown/extra/#footnotes]]. This addition would be very nice. 
+  * Reference-style links from classic markdown doesn’t works. [[http://daringfireball.net/projects/markdown/syntax#link|http://daringfireball.net/projects/markdown/syntax#link]]
+(dinobib 15-05-25)
+
+
+If it used .md, I might be able to keep it synced with my .md files in dropbox. 
+
+===== FAQ =====
+
+=== There are already two Markdown plugins, why do you write a third one? ===
+
+The prior two plugins ([[markdown]], [[markdownextra]]) work completely different. The other two just create a large container (either defined by ''<markdown>'' tags or a .md file ending) and parse everything inside them as Markdown.
+
+This plugin adds Markdown to the DokuWiki syntax, i.e. it still uses DokuWiki definitions for lists, headers, etc.  Thus, markdowku enables you to use internal links, mix Markdown with other plugins and other syntaxes and have clean section headers and media embedding.
+
+===== Discussion =====
+
+It would be nice if Commonmark would be supported!
+==== Date of the latest version ====
+Latest version is 2016-01-16, however the plugin repository is incorrectly showing 2017-02-19 as the current version, making the Extension Manager show an available update (that won't work since plugin.info.txt doesn't match the supposedly new version date).
+
+==== Donation doesn't work ====
+
+I want to donate some bucks for the developer of the plugin. But donation didn't work.
+
